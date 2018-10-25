@@ -1,0 +1,14 @@
+<div>
+  <input type="text" placeholder="search by name" #inp1>
+  <button (click)="findByMovieName(inp1.value)"> search </button>
+  <p>  </p>
+  <input type="text" placeholder="search by id" #inp2>
+  <button (click)="findByIMDBId(inp2.value)"> search </button>
+
+  <p> List Of Movies : </p>
+  <br>
+
+  <ul *ngFor="let movie of movies">
+    <li> {{ movie.title }} </li>
+  </ul>
+</div>
