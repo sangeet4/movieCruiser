@@ -1,7 +1,10 @@
-<mat-form-field class="search-field">
-  <input matInput type="text" placeholder="Movie Name" [(ngModel)]="movieToSearch">
-  <button mat-button *ngIf="movieToSearch" matSuffix mat-icon-button aria-label="Clear" (click)="movieToSearch=''">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
-<button mat-raised-button color="accent">Search!</button>
+<div>
+  <mat-form-field class="search-field">
+    <input matInput type="text" placeholder="Movie Name" [(ngModel)]="movieName">
+    <button mat-button *ngIf="movieName" matSuffix mat-icon-button aria-label="Clear">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="bhejo()">Search!</button>
+</div>
+

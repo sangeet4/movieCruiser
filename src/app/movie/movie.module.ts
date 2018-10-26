@@ -15,6 +15,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
+import { ShareService } from './share.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FormsModule } from '@angular/forms';
     CardsGridComponent,
     SearchmovieComponent,
     SearchbarComponent
-  ]
+  ],
+  providers:[ ShareService ]
 })
 
 export class MovieModule {}

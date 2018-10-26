@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ShareService } from './../share.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { MovieService } from '../movie.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-movie-list',
@@ -10,15 +12,26 @@ import { MovieService } from '../movie.service';
 
 export class MovieListComponent implements OnInit {
 
-  constructor(private movieService: MovieService) { }
-
-  public movies={};
+  public movies = {};
   public error;
 
-  ngOnInit() { }
+  subs: Subscription;
+  searchInput;
 
-  findByMovieName(name: string) {
-    this.movieService.getMovies(name)
+  ngOnInit() {
+
+  }
+
+  constructor(private movieService: MovieService, private service: ShareService) {
+    this.subs = service.subj$.subscribe(val => {
+      this.searchInput = val;
+      this.findByMovieName()
+      console.log(val);
+    })
+  }
+
+  findByMovieName() {
+    this.movieService.getMovies(this.searchInput)
       .subscribe(
         data => this.movies = data.results,
         error => this.error = error
