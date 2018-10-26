@@ -6,17 +6,19 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule,
     HttpClientModule,
-    MovieModule
+    HttpModule,
+    MovieModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

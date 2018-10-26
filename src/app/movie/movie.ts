@@ -13,5 +13,4 @@ export interface IMovie {
     poster_path: string;
     backdrop_path: string;
     release_date: number
-
 }
