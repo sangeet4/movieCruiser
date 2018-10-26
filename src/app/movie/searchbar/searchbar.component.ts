@@ -10,14 +10,14 @@ import { ShareService } from '../share.service';
 
 export class SearchbarComponent implements OnInit {
 
-  constructor(private servcie: ShareService) { }
+  constructor(private service: ShareService) { }
   movieName: string;
 
   ngOnInit() { }
 
   bhejo() {
     console.log(this.movieName)
-    this.servcie.send(this.movieName)
+    this.service.sendName(this.movieName)
   }
 
 }

@@ -1,7 +1,7 @@
 <div>
   <mat-form-field class="search-field">
     <input matInput type="text" placeholder="Movie Name" [(ngModel)]="movieName">
-    <button mat-button *ngIf="movieName" matSuffix mat-icon-button aria-label="Clear">
+    <button mat-button *ngIf="movieName" matSuffix mat-icon-button aria-label="Clear" (click) = "movieName=''">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>

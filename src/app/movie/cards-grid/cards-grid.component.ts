@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ShareService } from '../share.service';
 
 @Component({
   selector: 'app-cards-grid',
   templateUrl: './cards-grid.component.html',
-  styleUrls: ['./cards-grid.component.css']
+  styleUrls: ['./cards-grid.component.css'],
+  providers: []
 })
+
 export class CardsGridComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
   
-  iter = [1, 2, 3, 4];
+  @Input() public foundMovies;
+
+  constructor(private service: ShareService) { }
+
+  ngOnInit() { 
+    this.foundMovies = this.service.getValue()
+    console.log(this.foundMovies)
+  }
 
 }

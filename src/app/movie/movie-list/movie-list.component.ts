@@ -12,20 +12,20 @@ import { Subscription } from 'rxjs';
 
 export class MovieListComponent implements OnInit {
 
-  public movies = {};
+  public movies = [];
   public error;
 
   subs: Subscription;
   searchInput;
 
   ngOnInit() {
-
+    console.log(this.movies.length)
   }
 
   constructor(private movieService: MovieService, private service: ShareService) {
-    this.subs = service.subj$.subscribe(val => {
+    this.subs = service.subj1$.subscribe(val => {
       this.searchInput = val;
-      this.findByMovieName()
+      this.findByMovieName();
       console.log(val);
     })
   }
@@ -45,4 +45,9 @@ export class MovieListComponent implements OnInit {
         error => this.error = error
       )
   }
+
+  exportData(){
+    this.service.sendMovieList(this.movies)
+  }
+
 }

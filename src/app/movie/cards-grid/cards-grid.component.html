@@ -1,6 +1,9 @@
-<mat-grid-list cols="3" rowHeight="500px">
-  <mat-grid-tile
-      *ngFor="let var of iter">
-      <app-cards></app-cards>
+<p style="height: 500px"> 'movies found: ' {{ foundMovies.length }} </p>
+<!-- <ul *ngFor="let v of foundMovies">
+  <li> {{ v }}</li>
+</ul> -->
+<!-- <mat-grid-list cols="3" rowHeight="500px">
+  <mat-grid-tile *ngFor="let var of foundMovies">
+    <app-cards [movie]="var"></app-cards>
   </mat-grid-tile>
-</mat-grid-list>
+</mat-grid-list> -->
