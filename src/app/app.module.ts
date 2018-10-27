@@ -1,4 +1,3 @@
-import { MovieService } from './movie/movie.service';
 import { MovieModule } from '../app/movie/movie.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,6 +6,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+import { AboutComponent } from './movie/about/about.component';
+import { HomeComponent } from './movie/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     HttpModule,
     MovieModule,
-    FormsModule
-  ],
+    FormsModule,
+    // RouterModule.forRoot(appRoutes)
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })

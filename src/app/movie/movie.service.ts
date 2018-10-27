@@ -1,5 +1,5 @@
 import { IMovie } from './movie';
-import { APIK } from '../../config/prod';
+import { APIK } from '../../config/devStage';
 import { Injectable } from '@angular/core';
 import { HttpClient , HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';

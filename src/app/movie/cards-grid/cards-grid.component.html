@@ -1,6 +1,4 @@
-<!-- <p> 'movies found: ' {{ foundMovies.length }} </p> -->
-
-<mat-grid-list cols="3" rowHeight="500px">
+<mat-grid-list cols="3" rowHeight="400px">
   <mat-grid-tile *ngFor="let mov of foundMovies">
     <app-cards [movieInfo]="mov"></app-cards>
   </mat-grid-tile>
