@@ -11,17 +11,17 @@ export class CardsDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
 
-  sub:any;
+  sub: any;
 
-  detail : IMovie;
-  added : boolean = true;
+  detail: IMovie;
+  added: boolean = true;
 
   ngOnInit() {
-    console.log('i m here')
-    this.sub = this.route.params
+    // console.log('i m here')
+    this.route.queryParams
       .subscribe(
         params => {
-          this.detail = params['movie'];
+          this.detail = params;
         }
       )
   }

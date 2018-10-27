@@ -1,14 +1,15 @@
 <mat-card class="card-detail">
   <mat-card-header>
     <mat-card-title>{{ detail.title }}</mat-card-title>
-    <mat-card-subtitle>{{detail.release_date}}</mat-card-subtitle>
+    <mat-card-subtitle>{{ detail.release_date }}</mat-card-subtitle>
     <mat-card-subtitle><p>
       <strong *ngIf="detail.adult; else elseblock;">18+</strong>
       <ng-template #elseblock><strong>UA</strong></ng-template>
     </p></mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src='{{ "https://image.tmdb.org/t/p/w342/"+ movieInfo.poster_path}}' alt="Photo of a Shiba Inu">
+  
   <mat-card-content>
+      <img mat-card-image src='{{ "https://image.tmdb.org/t/p/w342/"+ detail.poster_path}}' alt="Photo of a Shiba Inu">
     <p>
       <strong>Language: </strong>{{detail.original_language}}
     </p>
@@ -26,7 +27,7 @@
 </mat-card>
 
 <!-- <div>
-  <p> 'here are the movie details:' </p>
+  <h1> 'here are the movie details:' </h1>
   <br>
-  <p> {{ detail.title }} </p>
+  <h2> {{ detail.id }} </h2>
 </div> -->

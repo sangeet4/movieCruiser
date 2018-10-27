@@ -8,12 +8,12 @@
   <img mat-card-image src='{{ "https://image.tmdb.org/t/p/w342/"+ movieInfo.poster_path}}' alt="Photo of a Shiba Inu">
 
   <mat-card-actions>
-    <a [routerLink]="['cardDetail',movieInfo.title]">
+    <a [routerLink]="['cardDetail']" [queryParams]="movieInfo">
       <button mat-button > CARD DETAILS </button>
     </a>
   </mat-card-actions>
 
-  <router-outlet></router-outlet>
+  <!-- <router-outlet></router-outlet> -->
 
   <mat-card-actions>
     <button *ngIf="added; else elseBlock;" mat-button>ADD</button>
