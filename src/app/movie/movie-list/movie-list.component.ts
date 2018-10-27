@@ -18,9 +18,7 @@ export class MovieListComponent implements OnInit {
   subs: Subscription;
   searchInput;
 
-  ngOnInit() {
-    console.log(this.movies.length)
-  }
+  ngOnInit() { }
 
   constructor(private movieService: MovieService, private service: ShareService) {
     this.subs = service.subj1$.subscribe(val => {
@@ -44,10 +42,6 @@ export class MovieListComponent implements OnInit {
         data => this.movies = data.results,
         error => this.error = error
       )
-  }
-
-  exportData(){
-    this.service.sendMovieList(this.movies)
   }
 
 }

@@ -10,13 +10,15 @@ import { ShareService } from '../share.service';
 
 export class CardsGridComponent implements OnInit {
   
-  @Input() public foundMovies;
+  @Input() public foundMovies = [];
 
   constructor(private service: ShareService) { }
 
   ngOnInit() { 
-    this.foundMovies = this.service.getValue()
-    console.log(this.foundMovies)
+    this.service.getValue()
+    .subscribe(
+      data=> this.foundMovies = data.results
+    )
   }
 
 }

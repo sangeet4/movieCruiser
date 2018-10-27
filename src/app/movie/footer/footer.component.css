@@ -1,9 +1,18 @@
 .social-text{
     text-align: center;
 }
+
+.par {
+    background-color: black;
+}
+
+.fab {
+    font-size: 10vh;
+}
+
 .social{
     background-color: black;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }

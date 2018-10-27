@@ -21,10 +21,4 @@ export class ShareService {
   sendName(value: string) {
     this.sub1.next(value);
   }
-
-  private sub2 = new Subject();
-  subj2$ = this.sub2.asObservable();
-  sendMovieList(value: any) {
-    this.sub2.next(value);
-  }
 }

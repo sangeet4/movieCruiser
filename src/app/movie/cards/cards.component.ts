@@ -5,15 +5,16 @@ import { Component, OnInit , Input } from '@angular/core';
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
+
 export class CardsComponent implements OnInit {
 
-  @Input() movie;
+  @Input() private movieInfo: any;
+
   constructor() { }
 
   added : boolean = false;
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   
 }

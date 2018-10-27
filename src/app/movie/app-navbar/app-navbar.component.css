@@ -1,6 +1,9 @@
 .flex-spacer{
     flex: 1 1 auto;
 }
-.ico, .titl{
-    margin-right: 1em;
+.ico,.titl{
+    margin-right: 3em;
 } 
+#head {
+    height: 10vh;
+}
