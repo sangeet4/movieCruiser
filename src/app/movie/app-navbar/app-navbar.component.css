@@ -1,9 +1,15 @@
 .flex-spacer{
     flex: 1 1 auto;
 }
+
 .ico,.titl{
     margin-right: 3em;
 } 
 #head {
     height: 10vh;
+}
+
+a {
+    color: aliceblue;
+    text-decoration: none;
 }

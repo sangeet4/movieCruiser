@@ -1,9 +1,20 @@
 <mat-card class="movie-preview">
+
   <mat-card-header>
-    <mat-card-title (click)="detailsBatao()"> {{ movieInfo.title }} </mat-card-title>
+    <mat-card-title> {{ movieInfo.title }} </mat-card-title>
     <mat-card-subtitle> {{ movieInfo.release_date }} </mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src='{{ "https://image.tmdb.org/t/p/w185/"+ movieInfo.poster_path}}' alt="Photo of a Shiba Inu">
+
+  <img mat-card-image src='{{ "https://image.tmdb.org/t/p/w342/"+ movieInfo.poster_path}}' alt="Photo of a Shiba Inu">
+
+  <mat-card-actions>
+    <a [routerLink]="['cardDetail',movieInfo.title]">
+      <button mat-button > CARD DETAILS </button>
+    </a>
+  </mat-card-actions>
+
+  <router-outlet></router-outlet>
+
   <mat-card-actions>
     <button *ngIf="added; else elseBlock;" mat-button>ADD</button>
     <ng-template #elseBlock>
@@ -11,4 +22,5 @@
       <button mat-button>DELETE</button>
     </ng-template>
   </mat-card-actions>
+
 </mat-card>

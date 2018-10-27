@@ -1,6 +1,16 @@
-<mat-toolbar class = "tootlbar-con" color="primary" id="head">
-  <span class="ico"><mat-icon>home</mat-icon></span>
-  <span class="titl">MovieCruiser</span>
+<mat-toolbar class="tootlbar-con" color="primary" id="head">
+  <span class="ico"><a routerLink="/">
+      <mat-icon>home</mat-icon>
+    </a></span>
+  <span class="titl">
+    <a routerLink="/home"> MovieCruiser</a>
+  </span>
+
+  <span class="titl">
+    <a routerLink="/about"> About </a>
+  </span>
   <span class="flex-spacer"></span>
-  <span><app-searchbar> </app-searchbar></span>
+  <span>
+    <app-searchbar> </app-searchbar>
+  </span>
 </mat-toolbar>

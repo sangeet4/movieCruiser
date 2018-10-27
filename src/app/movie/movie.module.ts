@@ -24,11 +24,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
 
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie.component';
+import { CardsDetailComponent } from './cards-detail/cards-detail.component';
 
 const appRoutes : Routes = [
-  { path:'home',component: HomeComponent },
+  { path:'home', component: HomeComponent },
   { path:'about', component: AboutComponent },
-  { path: '', component: AppComponent},
+  { path:'home/cardDetail/:movie',component: CardsDetailComponent },
+  { path: '', component: AppComponent },
   { path: '**', redirectTo: '/', pathMatch:'full' }
 ]
 
@@ -43,7 +45,8 @@ const appRoutes : Routes = [
     SearchbarComponent,
     AboutComponent,
     HomeComponent,
-    MovieComponent
+    MovieComponent,
+    CardsDetailComponent
   ],
   imports: [
     CommonModule,
