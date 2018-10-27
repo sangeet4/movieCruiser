@@ -1,3 +1,4 @@
+import { MovieListComponent } from './movie-list/movie-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -8,6 +9,7 @@ import { AppComponent } from '../app.component';
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
+    { path: 'home/list',component: MovieListComponent},
     { path: 'home/cardDetail', component: CardsDetailComponent },
     { path: '', component: AppComponent },
     { path: '**', redirectTo: 'home/cardDetail', pathMatch: 'full' }

@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'Movie Cruizer Application';
+  entr: boolean = false;
+
+  toggle() {
+    this.entr = !this.entr;
+  }
 }

@@ -17,7 +17,9 @@ export class CardsGridComponent implements OnInit {
   ngOnInit() { 
     this.service.getValue()
     .subscribe(
-      data=> this.foundMovies = data
+      data => {
+        this.foundMovies = data
+      }
     )
   }
 
