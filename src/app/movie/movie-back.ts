@@ -1,8 +1,8 @@
-export interface MovieBack {
-    id: number,
-    movieTitle: string,
-    comments: string,
+export class MovieBack {
+    id: number;
+    movieTitle: string;
+    comments: string;
     posterUrl: string
-    rating: number,
+    rating: number;
     yearOfRelease: number
 }

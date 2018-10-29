@@ -18,7 +18,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button (click)="onClick()" *ngIf="added; else elseBlock;" mat-button>ADD</button>
+    <button *ngIf="added; else elseBlock;" mat-button (click)="onClick()" >ADD</button>
     <ng-template #elseBlock>
       <button mat-button>UPDATE</button>
       <button mat-button>DELETE</button>

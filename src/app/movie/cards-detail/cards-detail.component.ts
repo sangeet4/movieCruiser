@@ -34,6 +34,7 @@ export class CardsDetailComponent implements OnInit {
   }
 
   onClick(){
+    this.movie = new MovieBack();
     this.movie.id = this.detail.id;
     this.movie.movieTitle = this.detail.title;
     this.movie.posterUrl = this.detail.poster_path;
@@ -43,7 +44,6 @@ export class CardsDetailComponent implements OnInit {
     
     this.backS.addMovie(this.movie).subscribe(result => {
       this.gotoList();
-      // this.resp=result;
     }, error => console.error(error));
   }
 

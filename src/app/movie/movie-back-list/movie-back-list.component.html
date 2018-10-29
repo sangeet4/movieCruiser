@@ -1,5 +1,31 @@
 <h2>Movie List</h2>
 
-<div *ngFor="let movie of movies">
-  {{movie.movieTitle}}
+<div *ngIf="movies">
+
+  <div class="card col-md-4" *ngFor="let movie of movies ">
+    <div class="card-block">
+        <mat-card class="card-movie">
+            <mat-card-header>
+              <mat-card-title>{{ movie.movieTitle }}</mat-card-title>
+              <mat-card-subtitle>{{ movie.yearOfRelease }}</mat-card-subtitle>
+            </mat-card-header>
+            
+            <mat-card-content>
+              <img mat-card-lg-image src='{{ "https://image.tmdb.org/t/p/w780/"+ movie.posterUrl}}' alt={{movie.movieTitle}}>
+              <p>
+                <strong>Rating: </strong>{{movie.rating}}
+              </p>
+              <p>
+                <strong>Comments: </strong>{{movie.comments}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <input type="text" placeholder="comment" #comm>
+              <button mat-button (click)="update(movie.id,comm.value)"> UPDATE </button>
+              <button mat-button (click)="delete(movie.id)">DELETE</button>
+            </mat-card-actions>
+          </mat-card>
+          
+    </div>
+  <div>
 </div>

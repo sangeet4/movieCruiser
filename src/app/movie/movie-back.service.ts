@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MovieBack } from './movie-back';
 
-const httpOptions ={
+const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type' : 'application/json'
   })
@@ -23,15 +23,17 @@ export class MovieBackService {
     return this.http.get(this.base_url);
   }
   
-  addMovie(movie : MovieBack) {
+  addMovie(movie : MovieBack): Observable<any> {
     return this.http.post(this.base_url, movie);
   }
 
-  deleteMovie(movie : MovieBack){
-    return this.http.delete(this.base_url+"/"+movie.id);
+  deleteMovie(id: Number){
+    return this.http.delete(this.base_url+"/"+id);
   }
 
-
+  updateMovie(id: Number, comments: String): Observable<any> {
+    return this.http.put(this.base_url+"/" + id, comments);
+  }
 
 
 }

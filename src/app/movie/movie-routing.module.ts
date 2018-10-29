@@ -1,3 +1,4 @@
+import { MovieBackListComponent } from './movie-back-list/movie-back-list.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,7 +13,9 @@ const appRoutes: Routes = [
     { path: 'home/list',component: MovieListComponent},
     { path: 'home/cardDetail', component: CardsDetailComponent },
     { path: '', component: AppComponent },
-    { path: '**', redirectTo: 'home/cardDetail', pathMatch: 'full' }
+    { path: 'showWishList',component: MovieBackListComponent},
+    { path:'showWishList/redirectMe',redirectTo: 'showWishList',pathMatch: 'full'},
+    { path: '**', redirectTo: 'showWishList', pathMatch: 'full' }
 ]
 
 @NgModule({
