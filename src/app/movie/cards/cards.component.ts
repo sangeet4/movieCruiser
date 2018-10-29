@@ -1,3 +1,4 @@
+import { IMovie } from './../movie';
 import { Component, OnInit , Input } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,11 +10,11 @@ import { Router } from '@angular/router';
 
 export class CardsComponent implements OnInit {
 
-  @Input() private movieInfo: any;
+  @Input() private movieInfo: IMovie;
 
   constructor(private route: Router) { }
 
-  added : boolean = false;
+  added : boolean = true;
 
   ngOnInit() {}
   

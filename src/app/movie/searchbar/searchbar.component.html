@@ -1,6 +1,6 @@
 <div>
   <mat-form-field class="search-field">
-    <input matInput type="text" placeholder="Movie Name" [(ngModel)]="movieName">
+    <input matInput type="text" placeholder="Movie Name" [(ngModel)]="movieName" (keyup.enter)="bhejo()">
     <button mat-button *ngIf="movieName" matSuffix mat-icon-button aria-label="Clear" (click) = "movieName=''">
       <mat-icon>close</mat-icon>
     </button>

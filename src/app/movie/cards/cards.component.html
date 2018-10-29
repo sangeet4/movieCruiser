@@ -5,17 +5,13 @@
     <mat-card-subtitle> {{ movieInfo.release_date }} </mat-card-subtitle>
   </mat-card-header>
 
-  <img mat-card-image src='{{ "https://image.tmdb.org/t/p/w342/"+ movieInfo.poster_path}}' alt="Photo of a Shiba Inu">
-
-  <mat-card-actions>
-    <a [routerLink]="['cardDetail']" [queryParams]="movieInfo">
-      <button mat-button > CARD DETAILS </button>
-    </a>
-  </mat-card-actions>
-
+  <img mat-card-md-image src='{{ "https://image.tmdb.org/t/p/w342/"+ movieInfo.poster_path}}' alt={{movieInfo.title}}>
   <!-- <router-outlet></router-outlet> -->
 
   <mat-card-actions>
+    <a [routerLink]="['cardDetail']" [queryParams]="movieInfo">
+      <button mat-button> CARD DETAILS </button>
+    </a>
     <button *ngIf="added; else elseBlock;" mat-button>ADD</button>
     <ng-template #elseBlock>
       <button mat-button>UPDATE</button>

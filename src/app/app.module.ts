@@ -12,7 +12,7 @@ import { HomeComponent } from './movie/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

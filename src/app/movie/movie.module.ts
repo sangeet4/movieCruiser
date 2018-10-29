@@ -1,3 +1,4 @@
+import { MovieBackService } from './movie-back.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MovieListComponent } from './movie-list/movie-list.component';
@@ -21,6 +22,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 
 import { MovieComponent } from './movie.component';
 import { MovieRoutingModule, routingComponents } from '../movie/movie-routing.module';
+import { MovieBackListComponent } from './movie-back-list/movie-back-list.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { MovieRoutingModule, routingComponents } from '../movie/movie-routing.mo
     SearchbarComponent,
     routingComponents,
     MovieComponent,
+    MovieBackListComponent,
   ],
   imports: [
     CommonModule,
@@ -55,7 +58,7 @@ import { MovieRoutingModule, routingComponents } from '../movie/movie-routing.mo
     SearchbarComponent,
     MovieComponent
   ],
-  providers:[ ShareService ]
+  providers:[ ShareService, MovieBackService ]
 })
 
 export class MovieModule {}

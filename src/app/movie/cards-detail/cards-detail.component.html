@@ -3,13 +3,13 @@
     <mat-card-title>{{ detail.title }}</mat-card-title>
     <mat-card-subtitle>{{ detail.release_date }}</mat-card-subtitle>
     <mat-card-subtitle><p>
-      <strong *ngIf="detail.adult; else elseblock;">18+</strong>
-      <ng-template #elseblock><strong>UA</strong></ng-template>
+      <strong *ngIf="detail.adult; else elseblock;">UA</strong>
+      <ng-template #elseblock><strong>18+</strong></ng-template>
     </p></mat-card-subtitle>
   </mat-card-header>
   
   <mat-card-content>
-    <img mat-card-image src='{{ "https://image.tmdb.org/t/p/w342/"+ detail.poster_path}}' alt="Photo of a Shiba Inu">
+    <img mat-card-lg-image src='{{ "https://image.tmdb.org/t/p/w780/"+ detail.poster_path}}' alt={{detail.title}}>
     <p>
       <strong>Language: </strong>{{detail.original_language}}
     </p>
@@ -18,7 +18,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button *ngIf="added; else elseBlock;" mat-button>ADD</button>
+    <button (click)="onClick()" *ngIf="added; else elseBlock;" mat-button>ADD</button>
     <ng-template #elseBlock>
       <button mat-button>UPDATE</button>
       <button mat-button>DELETE</button>
