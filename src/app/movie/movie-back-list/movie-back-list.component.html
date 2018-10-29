@@ -4,7 +4,7 @@
 
   <div class="card col-md-4" *ngFor="let movie of movies ">
     <div class="card-block">
-        <mat-card class="card-movie">
+        <mat-card class="card-movie" style="background-color: cadetblue;border:thin solid black">
             <mat-card-header>
               <mat-card-title>{{ movie.movieTitle }}</mat-card-title>
               <mat-card-subtitle>{{ movie.yearOfRelease }}</mat-card-subtitle>
@@ -20,9 +20,9 @@
               </p>
             </mat-card-content>
             <mat-card-actions>
-              <input type="text" placeholder="comment" #comm>
+              <input matInput type="text" placeholder="comment" #comm>
               <button mat-button (click)="update(movie.id,comm.value)"> UPDATE </button>
-              <button mat-button (click)="delete(movie.id)">DELETE</button>
+              <button mat-button routerLink="/redirectMe" (click)="delete(movie.id)">DELETE</button>
             </mat-card-actions>
           </mat-card>
           
